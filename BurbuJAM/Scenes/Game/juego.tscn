@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bml35r04d13im"]
+[gd_scene load_steps=7 format=3 uid="uid://bml35r04d13im"]
 
 [ext_resource type="Texture2D" uid="uid://b0rfaynjnn057" path="res://Assets/Art/Background/fondo_piedra.png" id="1_3uety"]
 [ext_resource type="PackedScene" uid="uid://bq0ldblmm5yoi" path="res://Scenes/Prototypes/Characters/Jugador/jugador.tscn" id="1_kqs1c"]
 [ext_resource type="PackedScene" uid="uid://dr0gxwtdj11yw" path="res://Scenes/plataforma_movil1.tscn" id="3_yjvhy"]
+[ext_resource type="PackedScene" uid="uid://cwuga444j4oja" path="res://Scenes/enemy.tscn" id="4_f5gxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3ecf"]
 texture = ExtResource("1_3uety")
@@ -43,4 +44,7 @@ position = Vector2(348, 113)
 position = Vector2(474, 212)
 
 [node name="AnimatableBody2D2" parent="." instance=ExtResource("3_yjvhy")]
-position = Vector2(244, 286)
+position = Vector2(244, 18)
+
+[node name="Enemy" parent="." instance=ExtResource("4_f5gxp")]
+position = Vector2(541, 239)
