@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqami7f0sl077"
+path="res://.godot/imported/UI - Cerrar.wav-f44483dcdd4c876ed9a21c5cc4b2f68e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/UI - Cerrar.wav"
+dest_files=["res://.godot/imported/UI - Cerrar.wav-f44483dcdd4c876ed9a21c5cc4b2f68e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
