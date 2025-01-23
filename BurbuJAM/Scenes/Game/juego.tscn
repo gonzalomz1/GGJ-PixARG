@@ -50,3 +50,11 @@ position = Vector2(244, 18)
 
 [node name="Enemy" parent="." instance=ExtResource("4_f5gxp")]
 position = Vector2(541, 239)
+
+[node name="Sonido" type="Node2D" parent="."]
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="Sonido"]
+
+[node name="Efectos" type="AudioStreamPlayer2D" parent="Sonido"]
+
+[node name="Espacial" type="AudioStreamPlayer2D" parent="Sonido"]
