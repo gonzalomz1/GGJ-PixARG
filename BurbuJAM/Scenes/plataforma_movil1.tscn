@@ -46,7 +46,6 @@ _data = {
 
 [node name="plat_movil1" type="AnimatableBody2D"]
 position = Vector2(-513, 46)
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_hoxqa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -55,7 +54,7 @@ texture = ExtResource("2_heu86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(1064, -64)
+position = Vector2(578, 17)
 shape = SubResource("CircleShape2D_86hik")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
