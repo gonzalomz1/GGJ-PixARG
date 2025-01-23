@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c77vpyrc04dkm"
+path="res://.godot/imported/Sonido de agua fluyendo (3).ogg-b10a1fb7b086b7bf7f7c6acc42ec969e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Sonido de agua fluyendo (3).ogg"
+dest_files=["res://.godot/imported/Sonido de agua fluyendo (3).ogg-b10a1fb7b086b7bf7f7c6acc42ec969e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
