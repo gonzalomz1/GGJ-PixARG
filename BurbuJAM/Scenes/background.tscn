@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://u028leegojkh"]
+
+[ext_resource type="Texture2D" uid="uid://ch88krsmo826x" path="res://Assets/Art/Background/plx-1.png" id="1_xxdox"]
+[ext_resource type="Texture2D" uid="uid://dk681dibohghp" path="res://Assets/Art/Background/backgrung-enles.jpg" id="2_5jfwu"]
+[ext_resource type="PackedScene" uid="uid://bq0ldblmm5yoi" path="res://Scenes/Prototypes/Characters/Jugador/jugador.tscn" id="3_t5pqs"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(636, 339)
+scale = Vector2(1.14347, 1.23211)
+texture = ExtResource("1_xxdox")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(642, 332)
+scale = Vector2(1.68841, 2.03638)
+texture = ExtResource("2_5jfwu")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_t5pqs")]
+position = Vector2(156, 360)
