@@ -13,7 +13,6 @@ var current_state = GameState.MENU
 # if InputManager.input_disabled
 # Esta linea de if asegura que se desactivan los inputs globalmente
 
-## Bloqueo de todos los inputs si input_disabled es true
 func _input(event: InputEvent) -> void:
 	handle_input(event)
 

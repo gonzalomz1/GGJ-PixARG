@@ -10,6 +10,7 @@ func animacionComienzoDelJuego() -> void:
 
 func handle_input(event):
 	if Input.is_action_pressed("confirmar") && $botonComenzar.visible:
+		print("se presiono confirmar y el boton comenzar esta visible")
 		irAGameplay()
 
 func _on_boton_comenzar_pressed():

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://biqmk2p8nm3sg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_ie2dv"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ie2dv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1057.0
+offset_top = 61.0
+offset_right = 1112.0
+offset_bottom = 84.0
+text = "asdasd"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 106.0
+offset_top = 72.0
+offset_right = 369.0
+offset_bottom = 99.0
