@@ -50,6 +50,3 @@ text = "tiempo"
 [node name="Efectos" type="AudioStreamPlayer2D" parent="Sonido"]
 
 [node name="Espacial" type="AudioStreamPlayer2D" parent="Sonido"]
-
-[connection signal="comenzarJuego" from="Menu" to="." method="_on_menu_comenzar_juego"]
-[connection signal="terminoAnimacionInicioJuego" from="Menu" to="." method="_on_menu_termino_animacion_inicio_juego"]
