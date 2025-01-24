@@ -10,6 +10,20 @@ size = Vector2(38, 59)
 collision_layer = 3
 script = ExtResource("1_8dswk")
 
+[node name="UI" type="Node2D" parent="."]
+
+[node name="TIEMPO" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_f70a1")
