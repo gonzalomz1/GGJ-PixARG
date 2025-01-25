@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bml35r04d13im"]
+[gd_scene load_steps=10 format=3 uid="uid://bml35r04d13im"]
 
 [ext_resource type="Script" path="res://Scenes/Game/juego.gd" id="1_2s3yi"]
 [ext_resource type="PackedScene" uid="uid://bq0ldblmm5yoi" path="res://Scenes/Prototypes/Characters/Jugador/jugador.tscn" id="1_kqs1c"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cita5dow20c4v" path="res://Scenes/MainMenu/menu_principal.tscn" id="6_o2qu6"]
 [ext_resource type="PackedScene" uid="uid://biqmk2p8nm3sg" path="res://Scenes/UI/ui.tscn" id="7_66jwo"]
 [ext_resource type="PackedScene" uid="uid://dsp06mr6q886n" path="res://Scenes/World/mundo.tscn" id="7_82po2"]
+[ext_resource type="PackedScene" uid="uid://c7yegve6lp5e0" path="res://Scenes/spike_ball.tscn" id="9_fpl5i"]
 [ext_resource type="PackedScene" uid="uid://bf3gt6njj5n8u" path="res://Scenes/spike_body.tscn" id="9_pt58w"]
 
 [node name="Juego" type="Node2D"]
@@ -28,6 +29,9 @@ position = Vector2(623, 536)
 
 [node name="spike_body" parent="." instance=ExtResource("9_pt58w")]
 position = Vector2(186, 367)
+
+[node name="SpikeBall" parent="." instance=ExtResource("9_fpl5i")]
+position = Vector2(785, 533)
 
 [connection signal="comenzarJuego" from="Menu" to="." method="_on_menu_comenzar_juego"]
 [connection signal="terminoAnimacionInicioJuego" from="Menu" to="." method="_on_menu_termino_animacion_inicio_juego"]
