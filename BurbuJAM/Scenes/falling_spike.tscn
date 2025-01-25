@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://besb5we5yt5tr"]
+
+[ext_resource type="Texture2D" uid="uid://cp8ieh4lxe2oq" path="res://Assets/Art/Characters/enemigos/pincho_de_mar.png" id="2_4m47a"]
+
+[sub_resource type="GDScript" id="GDScript_fvbf8"]
+script/source = "extends Node2D
+
+
+@export var speed = 16.0
+var current_speed = 0.0
+
+func _ready():
+	pass
+	#fall()
+
+func _physics_process(delta):
+	position.y += current_speed
+
+func _on_hitbox_area_entered(area):
+	if area.get_parent() is Jugador: # cambiar por jugador
+		area.get_parent().die() # una funcion que muera algo asi falta mejorar o hacer
+		queue_free()
+	
+
+
+
+func _on_player_detect_area_entered(area):
+	if area.get_parent() is Jugador:
+		$AnimationPlayer.play(\"move_side\")
+
+	
+func fall():
+	current_speed = speed
+	await get_tree().create_timer(5).timeout
+	queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pechu"]
+radius = 20.2237
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7b6"]
+size = Vector2(42, 154)
+
+[sub_resource type="Animation" id="Animation_8ryxx"]
+resource_name = "move_side"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3, 8), Vector2(6, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emfih"]
+_data = {
+"move_side": SubResource("Animation_8ryxx")
+}
+
+[node name="FallingSpike" type="Node2D"]
+position = Vector2(0.216773, 0.578062)
+script = SubResource("GDScript_fvbf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4m47a")
+
+[node name="Hitbox" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_pechu")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+position = Vector2(-0.216773, 1.42194)
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(0, 55)
+shape = SubResource("RectangleShape2D_3r7b6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_emfih")
+}
+autoplay = "move_side"
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="PlayerDetect" to="." method="_on_player_detect_area_entered"]

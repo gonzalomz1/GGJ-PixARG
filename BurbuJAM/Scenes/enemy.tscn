@@ -42,6 +42,8 @@ size = Vector2(55, 14)
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(630, 339)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_jwck8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -51,6 +53,7 @@ animation = &"idle"
 offset = Vector2(0, -6)
 
 [node name="detection_area" type="Area2D" parent="."]
+scale = Vector2(0.8, 0.760002)
 collision_layer = 3
 collision_mask = 3
 

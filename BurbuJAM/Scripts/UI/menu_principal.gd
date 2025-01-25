@@ -6,6 +6,7 @@ signal comenzarJuego
 
 func animacionComienzoDelJuego() -> void:
 	$AnimationPlayer.play("comienzo_del_juego")
+	await $AnimationPlayer.animation_finished
 	emit_signal("terminoAnimacionInicioJuego")
 
 func handle_input(event):
