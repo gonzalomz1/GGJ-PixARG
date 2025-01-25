@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7yegve6lp5e0"]
+[gd_scene load_steps=10 format=3 uid="uid://c7yegve6lp5e0"]
 
 [ext_resource type="Script" path="res://Scenes/spike_ball.gd" id="1_ah3js"]
 [ext_resource type="Texture2D" uid="uid://enre6p6jnr86" path="res://Scripts/Gameplay/Obstacles/Chain.png" id="1_t8yqs"]
 [ext_resource type="Texture2D" uid="uid://ddjf6ximqw6to" path="res://Scripts/Gameplay/Obstacles/Spiked Ball.png" id="2_gikwe"]
+[ext_resource type="Texture2D" uid="uid://disa0uaft1tn" path="res://Scripts/Gameplay/Obstacles/Idle.png" id="2_mjqkd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b65g0"]
 
@@ -67,25 +68,30 @@ script = ExtResource("1_ah3js")
 
 [node name="Chain1" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_t8yqs")
+texture = ExtResource("2_mjqkd")
 
 [node name="Chain2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 14)
+position = Vector2(3.32207e-06, 19)
 texture = ExtResource("1_t8yqs")
 
 [node name="Chain3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 28)
+position = Vector2(4.89568e-06, 28)
+texture = ExtResource("1_t8yqs")
+
+[node name="Chain4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6.64413e-06, 38)
 texture = ExtResource("1_t8yqs")
 
 [node name="SphereBall" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 54)
+position = Vector2(1.03159e-05, 59)
 texture = ExtResource("2_gikwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 55)
+position = Vector2(1.03159e-05, 59)
 scale = Vector2(1.322, 1.35557)
 shape = SubResource("CircleShape2D_b65g0")
 
