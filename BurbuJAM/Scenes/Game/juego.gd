@@ -46,9 +46,9 @@ func get_ui_node() -> CanvasLayer:
 	return get_node("UI")
 
 func _ready():
-	comenzarJuego()
+	comenzarAnimacionMenuInicio()
 
-func comenzarJuego() -> void:
+func comenzarAnimacionMenuInicio() -> void:
 	var jugador = get_player()
 	var menu = get_menu_node()
 	var ui = get_ui_node()
@@ -64,7 +64,7 @@ func comenzarGameplay() -> void:
 	var jugador = get_player()
 	var menu = get_menu_node()
 	var ui = get_ui_node()
-	ui.habilitar()
+	ui.comienzaGameplay()
 	jugador.habilitar()
 	menu.hide()
 
