@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk7vwgw1lfen8"]
+
+[ext_resource type="Texture2D" uid="uid://disa0uaft1tn" path="res://Scripts/Gameplay/Obstacles/Idle.png" id="1_fex8v"]
+[ext_resource type="Texture2D" uid="uid://enre6p6jnr86" path="res://Scripts/Gameplay/Obstacles/Chain.png" id="2_ccp28"]
+[ext_resource type="Texture2D" uid="uid://ddjf6ximqw6to" path="res://Scripts/Gameplay/Obstacles/Spiked Ball.png" id="3_5c13n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_howk7"]
+
+[sub_resource type="Animation" id="Animation_unp6j"]
+resource_name = "halfSwinf"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.309, 1.309]
+}
+
+[sub_resource type="Animation" id="Animation_jtk7l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqoai"]
+_data = {
+"RESET": SubResource("Animation_jtk7l"),
+"halfSwinf": SubResource("Animation_unp6j")
+}
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_fex8v")
+
+[node name="Chain1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 24)
+texture = ExtResource("2_ccp28")
+
+[node name="Chain2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 36)
+texture = ExtResource("2_ccp28")
+
+[node name="Chain3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 47)
+texture = ExtResource("2_ccp28")
+
+[node name="Chain4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 57)
+texture = ExtResource("2_ccp28")
+
+[node name="SphereBall" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 73)
+texture = ExtResource("3_5c13n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 74)
+shape = SubResource("CircleShape2D_howk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aqoai")
+}
