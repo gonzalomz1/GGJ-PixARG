@@ -6,6 +6,7 @@ var tiempo_transcurrido:int
 ## InputManager
 enum GameState {GAMEPLAY, MENU}
 var current_state = GameState.MENU
+var input_disabled = true
 
 ## IMPORTANTE:
 # Si se utilizan nodos de Control
@@ -20,6 +21,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	handle_input(event)
 
 func handle_input(event) -> void:
+	if input_disabled:
+		print("El input esta desactivado, ya que: input_disabled == true")
+		return
 	if current_state == GameState.GAMEPLAY:
 		var player = get_player()
 		if player:
@@ -65,4 +69,4 @@ func comenzarGameplay() -> void:
 	menu.hide()
 
 func _on_menu_termino_animacion_inicio_juego():
-	pass
+	input_disabled = false
