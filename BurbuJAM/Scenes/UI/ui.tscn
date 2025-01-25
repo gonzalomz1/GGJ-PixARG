@@ -5,15 +5,23 @@
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ie2dv")
 
-[node name="Label" type="Label" parent="."]
+[node name="Tiempo" type="Label" parent="."]
 offset_left = 1057.0
 offset_top = 61.0
 offset_right = 1112.0
 offset_bottom = 84.0
 text = "asdasd"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="Aire" type="ProgressBar" parent="."]
 offset_left = 106.0
 offset_top = 72.0
 offset_right = 369.0
 offset_bottom = 99.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 320.0
+offset_right = 846.0
+offset_bottom = 403.0
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"

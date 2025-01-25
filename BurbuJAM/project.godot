@@ -361,6 +361,7 @@ confirmar={
 2d_physics/layer_3="Enemigos"
 2d_physics/layer_4="Burbuja"
 2d_physics/layer_5="PowerUps"
+2d_physics/layer_6="Escudo"
 
 [physics]
 
