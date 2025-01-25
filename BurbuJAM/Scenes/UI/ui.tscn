@@ -19,9 +19,17 @@ offset_right = 369.0
 offset_bottom = 99.0
 
 [node name="GameOverLabel" type="Label" parent="."]
-offset_left = 503.0
-offset_top = 320.0
-offset_right = 846.0
-offset_bottom = 403.0
+visible = false
+offset_left = 453.0
+offset_top = 338.0
+offset_right = 796.0
+offset_bottom = 421.0
 theme_override_font_sizes/font_size = 60
 text = "GAME OVER"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 1057.0
+offset_top = 101.0
+offset_right = 1105.0
+offset_bottom = 124.0
+text = "Score:"

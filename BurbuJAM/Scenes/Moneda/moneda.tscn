@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://d25w1x5y1tf2a"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUps/moneda.gd" id="1_ngafc"]
+[ext_resource type="Texture2D" uid="uid://c43uyffn6aylr" path="res://Assets/Art/Animation/anim_moneda/RotatingCoin_spritSheet.PNG" id="1_npudv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2v6w"]
+atlas = ExtResource("1_npudv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqicm"]
+atlas = ExtResource("1_npudv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ukd2"]
+atlas = ExtResource("1_npudv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncl73"]
+atlas = ExtResource("1_npudv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3j7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2v6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqicm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ukd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncl73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6uy8"]
+size = Vector2(32, 32)
+
+[node name="Moneda" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_ngafc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_j3j7n")
+autoplay = "default"
+frame_progress = 0.909187
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v6uy8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

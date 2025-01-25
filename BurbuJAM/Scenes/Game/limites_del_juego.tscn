@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6wp74ouwb47f"]
+
+[ext_resource type="Script" path="res://Scenes/Game/limites_del_juego.gd" id="1_uygv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as2rs"]
+size = Vector2(1375, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpxho"]
+size = Vector2(1343.5, 50.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eh51"]
+size = Vector2(1344, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncp1l"]
+size = Vector2(53, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk5xx"]
+size = Vector2(54.5, 742)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s883h"]
+size = Vector2(1903, 353.5)
+
+[node name="LimitesDelJuego" type="Node2D"]
+script = ExtResource("1_uygv4")
+
+[node name="Norte" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="ColisionNorte" type="CollisionShape2D" parent="Norte"]
+position = Vector2(634.5, -23.5)
+shape = SubResource("RectangleShape2D_as2rs")
+debug_color = Color(0.698039, 0.709804, 0.717647, 1)
+
+[node name="Sur" type="StaticBody2D" parent="."]
+collision_mask = 66
+
+[node name="ColisionSur" type="CollisionShape2D" parent="Sur"]
+position = Vector2(643.25, 745.875)
+shape = SubResource("RectangleShape2D_jpxho")
+debug_color = Color(0.698039, 0.709804, 0.717647, 1)
+
+[node name="DetectorDeObstaculo" type="Area2D" parent="Sur"]
+collision_layer = 128
+collision_mask = 64
+
+[node name="ColisionDetectorObstaculo" type="CollisionShape2D" parent="Sur/DetectorDeObstaculo"]
+position = Vector2(643, 715)
+shape = SubResource("RectangleShape2D_3eh51")
+debug_color = Color(0.180392, 0.643137, 0, 0.419608)
+
+[node name="Este" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="ColisionEste" type="CollisionShape2D" parent="Este"]
+position = Vector2(1306.5, 360)
+shape = SubResource("RectangleShape2D_ncp1l")
+debug_color = Color(0.698039, 0.709804, 0.717647, 1)
+
+[node name="Oeste" type="StaticBody2D" parent="."]
+position = Vector2(0, -4)
+collision_mask = 2
+
+[node name="ColisionOeste" type="CollisionShape2D" parent="Oeste"]
+position = Vector2(-27.25, 371)
+shape = SubResource("RectangleShape2D_sk5xx")
+debug_color = Color(0.698039, 0.709804, 0.717647, 1)
+
+[node name="DestruyeJugador" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="ColisionDestruyeJugador" type="CollisionShape2D" parent="DestruyeJugador"]
+position = Vector2(676.5, 951.25)
+shape = SubResource("RectangleShape2D_s883h")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="Sur/DetectorDeObstaculo" to="." method="_on_detector_de_obstaculo_area_entered"]
+[connection signal="area_exited" from="Sur/DetectorDeObstaculo" to="." method="_on_detector_de_obstaculo_area_exited"]
+[connection signal="area_entered" from="DestruyeJugador" to="." method="_on_destruye_jugador_area_entered"]

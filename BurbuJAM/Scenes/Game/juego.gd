@@ -14,6 +14,9 @@ var input_disabled = true
 # if InputManager.input_disabled
 # Esta linea de if asegura que se desactivan los inputs globalmente
 
+func _ready():
+	comenzarAnimacionMenuInicio()
+
 func _input(event: InputEvent) -> void:
 	handle_input(event)
 
@@ -44,9 +47,6 @@ func get_menu_node() -> Control:
 
 func get_ui_node() -> CanvasLayer:
 	return get_node("UI")
-
-func _ready():
-	comenzarAnimacionMenuInicio()
 
 func comenzarAnimacionMenuInicio() -> void:
 	var jugador = get_player()

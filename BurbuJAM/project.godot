@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Game/juego.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventManager="*res://Scripts/Autoload/EventManager.gd"
+
 [display]
 
 window/size/viewport_width=1280
@@ -360,9 +364,16 @@ confirmar={
 2d_physics/layer_2="Jugador"
 2d_physics/layer_3="Enemigos"
 2d_physics/layer_4="Burbuja"
-2d_physics/layer_5="PowerUps"
+2d_physics/layer_5="Monedas"
 2d_physics/layer_6="Escudo"
+2d_physics/layer_7="Obstaculos"
+2d_physics/layer_8="DetectorObstaculo"
+2d_physics/layer_9="DestruyeJugador"
 
 [physics]
 
-2d/default_gravity=1.0
+2d/default_gravity=100.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
