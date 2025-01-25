@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bml35r04d13im"]
+[gd_scene load_steps=11 format=3 uid="uid://bml35r04d13im"]
 
 [ext_resource type="Script" path="res://Scenes/Game/juego.gd" id="1_2s3yi"]
 [ext_resource type="PackedScene" uid="uid://bq0ldblmm5yoi" path="res://Scenes/Prototypes/Characters/Jugador/jugador.tscn" id="1_kqs1c"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsp06mr6q886n" path="res://Scenes/World/mundo.tscn" id="7_82po2"]
 [ext_resource type="PackedScene" uid="uid://c7yegve6lp5e0" path="res://Scenes/spike_ball.tscn" id="9_fpl5i"]
 [ext_resource type="PackedScene" uid="uid://bf3gt6njj5n8u" path="res://Scenes/spike_body.tscn" id="9_pt58w"]
+[ext_resource type="PackedScene" uid="uid://dk7vwgw1lfen8" path="res://spikeball2.tscn" id="10_5iopb"]
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_2s3yi")
@@ -32,6 +33,9 @@ position = Vector2(186, 367)
 
 [node name="SpikeBall" parent="." instance=ExtResource("9_fpl5i")]
 position = Vector2(785, 533)
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("10_5iopb")]
+position = Vector2(454, 526)
 
 [connection signal="comenzarJuego" from="Menu" to="." method="_on_menu_comenzar_juego"]
 [connection signal="terminoAnimacionInicioJuego" from="Menu" to="." method="_on_menu_termino_animacion_inicio_juego"]
