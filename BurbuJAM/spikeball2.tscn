@@ -83,3 +83,4 @@ shape = SubResource("CircleShape2D_howk7")
 libraries = {
 "": SubResource("AnimationLibrary_aqoai")
 }
+autoplay = "halfSwinf"
