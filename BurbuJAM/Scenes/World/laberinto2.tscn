@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dnaih644xwh0i"]
+[gd_scene load_steps=23 format=3 uid="uid://dnaih644xwh0i"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Maps/laberinto1.gd" id="1_p8ray"]
 [ext_resource type="Texture2D" uid="uid://fl3ljsqepvjp" path="res://Assets/Art/tilesets/tileset-rockas2.png" id="2_bwl4r"]
 [ext_resource type="PackedScene" uid="uid://c7yegve6lp5e0" path="res://Scenes/spike_ball.tscn" id="3_ngbrs"]
 [ext_resource type="PackedScene" uid="uid://d25w1x5y1tf2a" path="res://Scenes/Moneda/moneda.tscn" id="3_vstqr"]
 [ext_resource type="PackedScene" uid="uid://dk7vwgw1lfen8" path="res://spikeball2.tscn" id="4_1ngth"]
+[ext_resource type="PackedScene" uid="uid://besb5we5yt5tr" path="res://Scenes/falling_spike.tscn" id="6_fdyq0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a5t1"]
 texture = ExtResource("2_bwl4r")
@@ -252,3 +253,21 @@ position = Vector2(385, 527)
 
 [node name="Moneda9" parent="." instance=ExtResource("3_vstqr")]
 position = Vector2(457, 527)
+
+[node name="FallingSpike" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(392, 102)
+
+[node name="FallingSpike2" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(438, 152)
+
+[node name="FallingSpike3" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(520, 54)
+
+[node name="FallingSpike4" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(726, 50)
+
+[node name="FallingSpike5" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(770, 50)
+
+[node name="FallingSpike6" parent="." instance=ExtResource("6_fdyq0")]
+position = Vector2(818, 50)
