@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://by5ypf7bfhfkq"]
+[gd_scene load_steps=24 format=3 uid="uid://by5ypf7bfhfkq"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Maps/laberinto1.gd" id="1_j46gb"]
 [ext_resource type="Texture2D" uid="uid://fl3ljsqepvjp" path="res://Assets/Art/tilesets/tileset-rockas2.png" id="2_orck0"]
@@ -110,6 +110,9 @@ size = Vector2(105, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x788j"]
 size = Vector2(25.5, 57)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aeor"]
+size = Vector2(516, 22)
+
 [node name="Laberinto1" type="Node2D"]
 script = ExtResource("1_j46gb")
 
@@ -198,6 +201,10 @@ shape = SubResource("RectangleShape2D_tbuux")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Laberinto/Paredes"]
 position = Vector2(1025.25, 652)
 shape = SubResource("RectangleShape2D_x788j")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Laberinto/Paredes"]
+position = Vector2(973, 687)
+shape = SubResource("RectangleShape2D_2aeor")
 
 [node name="Trampas" type="Node2D" parent="."]
 
