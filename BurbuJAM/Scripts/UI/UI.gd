@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-func _ready():
-	$GameOverLabel.hide()
 
 # Cada frame
 func _physics_process(delta):
@@ -35,17 +33,16 @@ func recoger_burbuja(cantidad:float) -> void:
 
 func ajustar_dificultad() -> void:
 	# Incrementa la dificultad de descenso de aire segun el tiempo transcurrido
-	if EventManager.tiempo > 30:
-		EventManager.velocidad_descenso_aire = 1.0
-	if EventManager.tiempo > 60:
+	if EventManager.tiempo > 10:
 		EventManager.velocidad_descenso_aire = 1.5
-	if EventManager.tiempo > 90:
-		EventManager.velocidad_descenso_aire = 2.0
+	if EventManager.tiempo > 30:
+		EventManager.velocidad_descenso_aire = 2.5
+	if EventManager.tiempo > 50:
+		EventManager.velocidad_descenso_aire = 3
 
 func fin_del_juego()-> void:
 	get_tree().paused = true # Pausa el juego
 	print(" Fin del Juego! ")
-	$GameOverLabel.show()
 
 func sumarScore() -> void:
 	print("sumando score")

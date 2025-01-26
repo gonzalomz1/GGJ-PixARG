@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3yrrmtegcsem"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/burbuja/burbuja.gd" id="1_0g35b"]
+[ext_resource type="Texture2D" uid="uid://ce4qvjuweh7px" path="res://Assets/Art/Animation/anim_burbuja/Coloured/64x64/bubble_1-sheet.png" id="1_uskq2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cs6pb"]
+radius = 8.06226
+
+[sub_resource type="Animation" id="Animation_qij63"]
+resource_name = "default"
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fel6"]
+_data = {
+"default": SubResource("Animation_qij63")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahfxn"]
+radius = 16.0
+
+[node name="Burbuja" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 2
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_0g35b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_uskq2")
+hframes = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cs6pb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5fel6")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ahfxn")
+debug_color = Color(0.835294, 0.388235, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

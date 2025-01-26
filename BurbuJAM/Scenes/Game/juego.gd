@@ -48,6 +48,9 @@ func get_menu_node() -> Control:
 func get_ui_node() -> CanvasLayer:
 	return get_node("UI")
 
+func get_spawner_node() -> Node2D:
+	return get_node("SpawnerBurbujas")
+
 func comenzarAnimacionMenuInicio() -> void:
 	var jugador = get_player()
 	var menu = get_menu_node()
@@ -64,9 +67,14 @@ func comenzarGameplay() -> void:
 	var jugador = get_player()
 	var menu = get_menu_node()
 	var ui = get_ui_node()
+	var spawnerBurbujas = get_spawner_node()
 	ui.comienzaGameplay()
 	jugador.habilitar()
 	menu.hide()
+	spawnerBurbujas.comenzarAFuncionar()
 
 func _on_menu_termino_animacion_inicio_juego():
 	input_disabled = false
+
+func _on_limites_del_juego_game_over():
+	get_tree().paused = true

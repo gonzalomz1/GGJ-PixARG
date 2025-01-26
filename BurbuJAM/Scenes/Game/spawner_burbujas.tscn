@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq0yysw54pvhm"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/SpawnBurbujas/SpawnerBurbujas.gd" id="1_qsgfq"]
+
+[node name="SpawnerBurbujas" type="Node2D"]
+script = ExtResource("1_qsgfq")
+
+[node name="Posicion1" type="Node2D" parent="."]
+position = Vector2(128, 0)
+
+[node name="Posicion2" type="Node2D" parent="."]
+position = Vector2(256, 0)
+
+[node name="Posicion3" type="Node2D" parent="."]
+position = Vector2(384, 0)
+
+[node name="Posicion4" type="Node2D" parent="."]
+position = Vector2(512, 0)
+
+[node name="Posicion5" type="Node2D" parent="."]
+position = Vector2(640, 0)
+
+[node name="Posicion6" type="Node2D" parent="."]
+position = Vector2(768, 0)
+
+[node name="Posicion7" type="Node2D" parent="."]
+position = Vector2(896, 0)
+
+[node name="Posicion8" type="Node2D" parent="."]
+position = Vector2(1024, 0)
+
+[node name="Posicion9" type="Node2D" parent="."]
+position = Vector2(1150, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,40 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://cita5dow20c4v"]
+[gd_scene load_steps=18 format=3 uid="uid://cita5dow20c4v"]
 
-[ext_resource type="Texture2D" uid="uid://cr54uh5fv37iy" path="res://Assets/Art/UI/placeholderLOGO.png" id="1_ge1bf"]
 [ext_resource type="Script" path="res://Scripts/UI/menu_principal.gd" id="1_tvq22"]
-[ext_resource type="Texture2D" uid="uid://cnetirca70lvx" path="res://Assets/Art/UI/placeholderMenuPrincipal.png" id="2_mmeaw"]
-[ext_resource type="Texture2D" uid="uid://cyiu5otghw0b5" path="res://Assets/Art/UI/placeholderBotonComenzar.png" id="4_yj0a7"]
+[ext_resource type="VideoStream" path="res://Assets/Art/cinematics/intro_salida.ogv" id="2_ddwry"]
+[ext_resource type="Texture2D" uid="uid://hgp2do2jg6cu" path="res://Assets/Art/logo/logo_base_pixarg.png" id="2_waux1"]
+[ext_resource type="VideoStream" path="res://Assets/Art/cinematics/salida_muerte.ogv" id="4_ijq6r"]
+[ext_resource type="FontFile" uid="uid://o1ti4gqqfaba" path="res://Assets/Fonts/letra_Diabetes_burbujam.ttf" id="5_hsk6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5xxn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvm8h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4w3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1jc2y"]
 
 [sub_resource type="Animation" id="Animation_jd06d"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("spriteLogo:visible")
+tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("spriteMenu:visible")
+tracks/2/path = NodePath("SpriteLogo:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -46,7 +55,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("botonComenzar:visible")
+tracks/3/path = NodePath("ColorRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -58,19 +67,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("botonComenzar:disabled")
+tracks/4/path = NodePath("botonRejugar:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath(".:visible")
+tracks/5/path = NodePath("GameOver:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -79,54 +88,167 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("IntroInicio:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("botonRejugar:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_huxq5"]
 resource_name = "comienzo_del_juego"
-length = 7.0
-tracks/0/type = "value"
+length = 13.5
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 5, 7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(5, 12, 12.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"reproducirVideoIntro"
+}, {
+"args": [],
+"method": &"pausarVideoIntro"
+}, {
+"args": [],
+"method": &"luegoDePausarElVideo"
+}]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("spriteLogo:visible")
+tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"times": PackedFloat32Array(0, 2.3, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("spriteMenu:visible")
+tracks/2/path = NodePath("SpriteLogo:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("botonComenzar:visible")
+tracks/3/path = NodePath("ColorRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 7),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("botonRejugar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GameOver:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xgwun"]
+resource_name = "game_over"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"reproducirVideoGameOver"
+}, {
+"args": [],
+"method": &"pausarVideoGameOver"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IntroInicio:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("botonRejugar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -134,11 +256,11 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("botonComenzar:disabled")
+tracks/4/path = NodePath("botonRejugar:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 7),
+"times": PackedFloat32Array(0, 3.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -147,8 +269,17 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpv4b"]
 _data = {
 "RESET": SubResource("Animation_jd06d"),
-"comienzo_del_juego": SubResource("Animation_huxq5")
+"comienzo_del_juego": SubResource("Animation_huxq5"),
+"game_over": SubResource("Animation_xgwun")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g63us"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0yhi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1m7j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riql3"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -159,13 +290,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tvq22")
 
-[node name="spriteLogo" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-texture = ExtResource("1_ge1bf")
+[node name="SpriteLogo" type="Sprite2D" parent="."]
+position = Vector2(642, 362)
+texture = ExtResource("2_waux1")
 
-[node name="spriteMenu" type="Sprite2D" parent="."]
-position = Vector2(640, 360)
-texture = ExtResource("2_mmeaw")
+[node name="IntroInicio" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1186.0
+stream = ExtResource("2_ddwry")
+
+[node name="GameOver" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_ijq6r")
 
 [node name="botonComenzar" type="Button" parent="."]
 layout_mode = 0
@@ -173,8 +312,14 @@ offset_left = 82.0
 offset_top = 403.0
 offset_right = 1225.0
 offset_bottom = 477.0
-disabled = true
-icon = ExtResource("4_yj0a7")
+theme_override_colors/font_color = Color(1, 0.611765, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("5_hsk6q")
+theme_override_font_sizes/font_size = 78
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b5xxn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xvm8h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y4w3y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1jc2y")
+text = "Presiona ENTER PARA COMENZAR"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -183,8 +328,26 @@ libraries = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_top = 1.0
+offset_right = 1279.0
+offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
+[node name="botonRejugar" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 305.0
+offset_top = 358.0
+offset_right = 1005.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(1, 0.611765, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("5_hsk6q")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g63us")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u0yhi")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r1m7j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_riql3")
+text = "Presiona enter para volver a jugar"
+
 [connection signal="pressed" from="botonComenzar" to="." method="_on_boton_comenzar_pressed"]
+[connection signal="pressed" from="botonRejugar" to="." method="_on_boton_rejugar_pressed"]

@@ -382,7 +382,7 @@ shape = SubResource("RectangleShape2D_f70a1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(4, 0)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1280
@@ -390,7 +390,7 @@ limit_bottom = 720
 limit_smoothed = true
 
 [node name="RestarVida" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 4
 
 [node name="ColisionRestarVida" type="CollisionShape2D" parent="RestarVida"]

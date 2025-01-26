@@ -1,6 +1,6 @@
 extends Node2D
 
-signal destruirJugador
+signal GameOver
 
 
 func _on_detector_de_obstaculo_area_entered(area):
@@ -9,6 +9,5 @@ func _on_detector_de_obstaculo_area_entered(area):
 func _on_detector_de_obstaculo_area_exited(area):
 	$Sur/ColisionSur.disabled = false
 
-
 func _on_destruye_jugador_area_entered(area):
-	emit_signal("destruirJugador")
+	emit_signal("GameOver")

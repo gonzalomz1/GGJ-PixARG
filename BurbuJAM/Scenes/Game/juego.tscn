@@ -1,47 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://bml35r04d13im"]
+[gd_scene load_steps=8 format=3 uid="uid://bml35r04d13im"]
 
 [ext_resource type="Script" path="res://Scenes/Game/juego.gd" id="1_2s3yi"]
 [ext_resource type="PackedScene" uid="uid://bq0ldblmm5yoi" path="res://Scenes/Prototypes/Characters/Jugador/jugador.tscn" id="1_kqs1c"]
-[ext_resource type="PackedScene" uid="uid://dr0gxwtdj11yw" path="res://Scenes/plataforma_movil1.tscn" id="3_yjvhy"]
-[ext_resource type="PackedScene" uid="uid://cwuga444j4oja" path="res://Scenes/enemy.tscn" id="4_f5gxp"]
+[ext_resource type="PackedScene" uid="uid://dq0yysw54pvhm" path="res://Scenes/Game/spawner_burbujas.tscn" id="4_3rmtl"]
+[ext_resource type="PackedScene" uid="uid://c5kx5enpe0ye" path="res://Scenes/Game/background.tscn" id="4_lhtt1"]
 [ext_resource type="PackedScene" uid="uid://cita5dow20c4v" path="res://Scenes/MainMenu/menu_principal.tscn" id="6_o2qu6"]
 [ext_resource type="PackedScene" uid="uid://biqmk2p8nm3sg" path="res://Scenes/UI/ui.tscn" id="7_66jwo"]
-[ext_resource type="PackedScene" uid="uid://c7yegve6lp5e0" path="res://Scenes/spike_ball.tscn" id="9_fpl5i"]
-[ext_resource type="PackedScene" uid="uid://bf3gt6njj5n8u" path="res://Scenes/spike_body.tscn" id="9_pt58w"]
 [ext_resource type="PackedScene" uid="uid://b6wp74ouwb47f" path="res://Scenes/Game/limites_del_juego.tscn" id="10_5a3fn"]
-[ext_resource type="PackedScene" uid="uid://dk7vwgw1lfen8" path="res://spikeball2.tscn" id="10_5iopb"]
-[ext_resource type="PackedScene" uid="uid://d25w1x5y1tf2a" path="res://Scenes/Moneda/moneda.tscn" id="11_3ymqj"]
 
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_2s3yi")
 
-[node name="testsInteractivos" type="Node2D" parent="."]
+[node name="LimitesDelJuego" parent="." instance=ExtResource("10_5a3fn")]
 
-[node name="spike_body" parent="testsInteractivos" instance=ExtResource("9_pt58w")]
-position = Vector2(186, 367)
+[node name="Background" parent="." instance=ExtResource("4_lhtt1")]
 
-[node name="Enemy" parent="testsInteractivos" instance=ExtResource("4_f5gxp")]
-position = Vector2(1024, 138)
-
-[node name="plat_movil1" parent="testsInteractivos" instance=ExtResource("3_yjvhy")]
-
-[node name="SpikeBall" parent="testsInteractivos" instance=ExtResource("9_fpl5i")]
-position = Vector2(785, 533)
-
-[node name="AnimatableBody2D" parent="testsInteractivos" instance=ExtResource("10_5iopb")]
-position = Vector2(454, 526)
-
-[node name="Moneda" parent="testsInteractivos" instance=ExtResource("11_3ymqj")]
-position = Vector2(854, 231)
+[node name="SpawnerBurbujas" parent="." instance=ExtResource("4_3rmtl")]
 
 [node name="Jugador" parent="." instance=ExtResource("1_kqs1c")]
-position = Vector2(623, 536)
+position = Vector2(628, 655)
 
 [node name="Menu" parent="." instance=ExtResource("6_o2qu6")]
 
 [node name="UI" parent="." instance=ExtResource("7_66jwo")]
 
-[node name="LimitesDelJuego" parent="." instance=ExtResource("10_5a3fn")]
-
+[connection signal="GameOver" from="LimitesDelJuego" to="." method="_on_limites_del_juego_game_over"]
 [connection signal="comenzarJuego" from="Menu" to="." method="_on_menu_comenzar_juego"]
 [connection signal="terminoAnimacionInicioJuego" from="Menu" to="." method="_on_menu_termino_animacion_inicio_juego"]

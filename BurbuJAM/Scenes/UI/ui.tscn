@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://biqmk2p8nm3sg"]
+[gd_scene load_steps=5 format=3 uid="uid://biqmk2p8nm3sg"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_ie2dv"]
+[ext_resource type="FontFile" uid="uid://o1ti4gqqfaba" path="res://Assets/Fonts/letra_Diabetes_burbujam.ttf" id="2_ut0f2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nno8k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgki8"]
+bg_color = Color(1, 0.611765, 0.0941176, 0.352941)
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ie2dv")
@@ -10,26 +16,26 @@ offset_left = 1057.0
 offset_top = 61.0
 offset_right = 1112.0
 offset_bottom = 84.0
-text = "asdasd"
+theme_override_colors/font_color = Color(1, 0.611765, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_ut0f2")
+text = "Tiempo"
 
 [node name="Aire" type="ProgressBar" parent="."]
 offset_left = 106.0
 offset_top = 72.0
 offset_right = 369.0
 offset_bottom = 99.0
-
-[node name="GameOverLabel" type="Label" parent="."]
-visible = false
-offset_left = 453.0
-offset_top = 338.0
-offset_right = 796.0
-offset_bottom = 421.0
-theme_override_font_sizes/font_size = 60
-text = "GAME OVER"
+theme_override_colors/font_color = Color(1, 0.611765, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_ut0f2")
+theme_override_styles/background = SubResource("StyleBoxEmpty_nno8k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qgki8")
+value = 50.0
 
 [node name="Score" type="Label" parent="."]
 offset_left = 1057.0
 offset_top = 101.0
 offset_right = 1105.0
 offset_bottom = 124.0
+theme_override_colors/font_color = Color(1, 0.611765, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_ut0f2")
 text = "Score:"
