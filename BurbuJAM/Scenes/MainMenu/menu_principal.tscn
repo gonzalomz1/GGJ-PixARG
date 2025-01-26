@@ -1,9 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cita5dow20c4v"]
+[gd_scene load_steps=15 format=3 uid="uid://cita5dow20c4v"]
 
 [ext_resource type="Script" path="res://Scripts/UI/menu_principal.gd" id="1_tvq22"]
-[ext_resource type="VideoStream" path="res://Assets/Art/cinematics/intro_salida.ogv" id="2_ddwry"]
-[ext_resource type="Texture2D" uid="uid://hgp2do2jg6cu" path="res://Assets/Art/logo/logo_base_pixarg.png" id="2_waux1"]
-[ext_resource type="VideoStream" path="res://Assets/Art/cinematics/salida_muerte.ogv" id="4_ijq6r"]
 [ext_resource type="FontFile" uid="uid://o1ti4gqqfaba" path="res://Assets/Fonts/letra_Diabetes_burbujam.ttf" id="5_hsk6q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5xxn"]
@@ -292,19 +289,16 @@ script = ExtResource("1_tvq22")
 
 [node name="SpriteLogo" type="Sprite2D" parent="."]
 position = Vector2(642, 362)
-texture = ExtResource("2_waux1")
 
 [node name="IntroInicio" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 1186.0
-stream = ExtResource("2_ddwry")
 
 [node name="GameOver" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-stream = ExtResource("4_ijq6r")
 
 [node name="botonComenzar" type="Button" parent="."]
 layout_mode = 0
