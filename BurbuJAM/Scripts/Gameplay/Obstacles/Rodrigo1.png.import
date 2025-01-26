@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c463i6tyq70p5"
-path="res://.godot/imported/logo_base_pixarg.png-07f32663ab34fee6a87f6de22f44dd13.ctex"
+uid="uid://dh6muvm106tpc"
+path="res://.godot/imported/Rodrigo1.png-8483f86ddd8c0a98862b0a4924146565.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/logo/logo_base_pixarg.png"
-dest_files=["res://.godot/imported/logo_base_pixarg.png-07f32663ab34fee6a87f6de22f44dd13.ctex"]
+source_file="res://Scripts/Gameplay/Obstacles/Rodrigo1.png"
+dest_files=["res://.godot/imported/Rodrigo1.png-8483f86ddd8c0a98862b0a4924146565.ctex"]
 
 [params]
 
